@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: mentoria_brq
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/mentoria
+    driver-class-name:
+    hikari:
+      max-life-time: 30001
+      minimum-idle: 3
+      idle-timeout: 10000
+#      maximum-pool-size: ${POOL_MAX_SIZE}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+#org.hibernate.dialect.Mysql8Dialect
