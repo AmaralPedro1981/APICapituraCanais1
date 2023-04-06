@@ -2,17 +2,22 @@ package com.Mentoria.BRQ.APICapituraCanais1.controller;
 
 import com.Mentoria.BRQ.APICapituraCanais1.modelo.Cliente;
 import com.Mentoria.BRQ.APICapituraCanais1.repositorio.ClienteRepositorio;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@SpringBootApplication
 @RestController
 @RequestMapping("/cliente")
 public class Clientecontroller {
 
-    private ClienteRepositorio clienteRepositorio;
+    private ClienteRepositorio   clienteRepositorio;
+
+    public Clientecontroller(ClienteRepositorio clienteRepositorio) {
+        this.clienteRepositorio = clienteRepositorio;
+    }
 
 
     @GetMapping
@@ -21,9 +26,9 @@ public class Clientecontroller {
     }
 
     @PostMapping
-    public ResponseEntity incluir(@RequestBody Cliente cliente) {
+    public void incluir(@RequestBody Cliente cliente) {
         clienteRepositorio.save(cliente);        // Incluir
-    return ResponseEntity.noContent().build();
+//    return ResponseEntity.noContent().build();
     }
 
 

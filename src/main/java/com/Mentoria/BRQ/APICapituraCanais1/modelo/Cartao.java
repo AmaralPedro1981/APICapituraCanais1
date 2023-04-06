@@ -19,9 +19,7 @@ public class Cartao {
 
     private long matricula;
     private String bandeira;
-//    private String nome;
     private String banco;
-//    private String telefone;
     private Instant datacadastro;
 
 }

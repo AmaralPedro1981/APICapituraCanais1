@@ -19,6 +19,7 @@ class Cartaocontroller {
     public List<Cartao> listar(){
         return cartaoRepositorio.findAll();  // Listar
     }
+
     @PostMapping
     public void incluir(@RequestBody Cartao cartao) {
         cartaoRepositorio.save(cartao);    // metodo incluir
@@ -26,7 +27,6 @@ class Cartaocontroller {
 
     @PutMapping
     public void alterar(@RequestBody Cartao cartao) {
-
         cartaoRepositorio.save(cartao); // metodo alterar
     }
 
