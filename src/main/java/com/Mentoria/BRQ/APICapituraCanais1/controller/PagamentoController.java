@@ -19,10 +19,11 @@ import java.net.URI;
 public class PagamentoController {
 
     @Autowired
+
     private PagamentoService service;
 
     @GetMapping
-    public Page<PagamentoDto> List (@PageableDefault(size = 10) Pageable paginacao) {
+    public Page<PagamentoDto> List (@PageableDefault(size = 10) Pageable paginacao){
         return service.obterTodos(paginacao);
     }
 
@@ -38,6 +39,7 @@ public class PagamentoController {
         URI endereco = uriBuilder.path("/pagamentos/{id}").buildAndExpand(pagamento.getId()).toUri();
         return ResponseEntity.created(endereco).body(pagamento);
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<PagamentoDto> update (@PathVariable @NotNull Long id, @RequestBody @Valid PagamentoDto dto){

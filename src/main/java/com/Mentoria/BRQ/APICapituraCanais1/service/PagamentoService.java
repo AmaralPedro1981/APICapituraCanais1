@@ -1,10 +1,12 @@
 package com.Mentoria.BRQ.APICapituraCanais1.service;
 
 import com.Mentoria.BRQ.APICapituraCanais1.dto.PagamentoDto;
+import com.Mentoria.BRQ.APICapituraCanais1.mapper.PagamentoMapper;
 import com.Mentoria.BRQ.APICapituraCanais1.modelo.Status;
 import com.Mentoria.BRQ.APICapituraCanais1.pagamento.Pagamento;
 import com.Mentoria.BRQ.APICapituraCanais1.repositorio.PagamentoRepositorio;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 @Configuration
 @Service
-
+@Setter
 public class PagamentoService {
 
 
@@ -24,6 +26,8 @@ public class PagamentoService {
 
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private PagamentoMapper pagamentoMapper;
 
 
     public Page<PagamentoDto> obterTodos(Pageable paginacao) {
@@ -43,7 +47,7 @@ public class PagamentoService {
 
 
     public PagamentoDto criarPagamento(PagamentoDto dto){
-        Pagamento pagamento = modelMapper.map(dto, Pagamento.class);
+        Pagamento pagamento = pagamentoMapper.paraPagamento(dto);
         pagamento.setStatus(Status.CRIADO);
         repositorio.save(pagamento);
 

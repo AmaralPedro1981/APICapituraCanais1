@@ -27,7 +27,7 @@ public class Cliente {
 
     private String email;
 
-    private String endereço;
+    private String endereco;
 
     private Instant datacadastro;
 }

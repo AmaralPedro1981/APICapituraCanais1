@@ -25,7 +25,7 @@ public class Pagamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+
     @Positive
     private BigDecimal valor;
 
@@ -46,10 +46,14 @@ public class Pagamento {
     private String codigo;
 
     @NotNull
+    @Size(max = 6)
+    private String dia;
+
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @NotBlank
+    @NotNull
     private long formaDePagamento;
 }
 

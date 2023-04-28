@@ -29,7 +29,7 @@ public class ClienteDto {
 
         private String email;
 
-        private String endereço;
+        private String endereco;
 
         private Instant datacadastro;
     }

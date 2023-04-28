@@ -17,12 +17,12 @@ class Cartaocontroller {
 
     @GetMapping
     public List<Cartao> listar(){
-        return cartaoRepositorio.findAll();  // Listar
+        return cartaoRepositorio.findAll();  // consultar
     }
 
     @PostMapping
-    public void incluir(@RequestBody Cartao cartao) {
-        cartaoRepositorio.save(cartao);    // metodo incluir
+    public void incluir(@RequestBody Cartao cartao)   {
+        cartaoRepositorio.save(cartao);    // metodo criar
     }
 
     @PutMapping
