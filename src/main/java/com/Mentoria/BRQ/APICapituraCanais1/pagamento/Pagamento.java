@@ -25,7 +25,6 @@ public class Pagamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @Positive
     private BigDecimal valor;
 
