@@ -21,6 +21,7 @@ public class PagamentoDto {
     private String dia;
     private String expiracao;
     private String codigo;
+    private String semana;
     private Status status;
     private long formaDePagamento;
 

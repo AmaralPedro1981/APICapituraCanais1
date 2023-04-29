@@ -13,6 +13,7 @@ public class PagamentoMapper {
            pagamento.setFormaDePagamento(dto.getFormaDePagamento());
            pagamento.setId(dto.getId());
            pagamento.setDia(dto.getDia());
+           pagamento.setSemana(dto.getSemana());
            pagamento.setValor(dto.getValor());
            pagamento.setNumero(dto.getNumero());
            pagamento.setNome(dto.getNome());

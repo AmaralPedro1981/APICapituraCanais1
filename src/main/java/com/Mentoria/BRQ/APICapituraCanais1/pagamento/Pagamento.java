@@ -40,12 +40,15 @@ public class Pagamento {
     @Size(max = 7)
     private String expiracao;
 
+    @Size(max = 20)
+    private String semana;
+
     @NotBlank
     @Size(min = 3, max = 3)
     private String codigo;
 
-    @NotNull
-    @Size(max = 6)
+
+    @Size(max = 20)
     private String dia;
 
     @NotNull
