@@ -12,7 +12,7 @@
       idle-timeout: 10000
 #      maximum-pool-size: ${POOL_MAX_SIZE}
   jpa:
-    hibernate:
+    0:
       ddl-auto: update
     open-in-view: false
     database-platform: org.hibernate.dialect.MySQL8Dialect

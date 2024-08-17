@@ -39,7 +39,8 @@ public class PagamentoService {
 
 
     public PagamentoDto obterPorId(Long id) {
-        Pagamento pagamento = repositorio.findById(id)
+        Pagamento pagamento = repositorio
+                .findById(id)
                 .orElseThrow(() -> new EntityNotFoundException());
         return modelMapper.map(pagamento, PagamentoDto.class);
 
@@ -68,4 +69,7 @@ public class PagamentoService {
         repositorio.deleteById(id);
     }
 
+    public Page<PagamentoDto> obterTodos(long l) {
+        return null;
+    }
 }

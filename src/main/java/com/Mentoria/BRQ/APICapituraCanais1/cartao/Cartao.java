@@ -1,25 +1,36 @@
-package com.Mentoria.BRQ.APICapituraCanais1.dto;
+package com.Mentoria.BRQ.APICapituraCanais1.cartao;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
-
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
+@Table(name = "cartao")
 @Getter
 @Setter
-public class CartaoDto {
+@AllArgsConstructor
+@NoArgsConstructor
 
 
+public class Cartao {
 
-        private Long matricula;
+
+        @Id
+
+        private long matricula;
+
         private String bandeira;
+
         private String banco;
+
         private Instant datacadastro;
 
-    }
+
+}
+
+
 
 

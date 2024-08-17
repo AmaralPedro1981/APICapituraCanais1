@@ -11,11 +11,11 @@ import java.util.Optional;
 @SpringBootApplication
 @RestController
 @RequestMapping("/cliente")
-public class Clientecontroller {
+public class ClienteController {
 
     private ClienteRepositorio   clienteRepositorio;
 
-    public Clientecontroller(ClienteRepositorio clienteRepositorio) {
+    public ClienteController(ClienteRepositorio clienteRepositorio) {
         this.clienteRepositorio = clienteRepositorio;
     }
 
@@ -28,11 +28,11 @@ public class Clientecontroller {
     @PostMapping
     public void incluir(@RequestBody Cliente cliente) {
         clienteRepositorio.save(cliente);        // Incluir
-//    return ResponseEntity.noContent().build();
+
     }
 
 
-    @PutMapping
+    @PutMapping("/{matricula}")
     public ResponseEntity alterar(@RequestBody Cliente cliente) {
 
         clienteRepositorio.save(cliente);  // Alterar
